@@ -138,7 +138,7 @@ def load_website(url):
     loader.headers = {"User-Agent": ua.random}
     docs = loader.load_and_split(splitter)
 
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(openai_api_type=openai_api_key)
 
     url_copy = url[:]
     cache_filename = url_copy.replace("/", "_")
